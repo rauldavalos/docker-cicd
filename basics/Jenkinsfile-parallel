@@ -5,7 +5,7 @@ node {
      sh "git rev-parse --short HEAD > .git/commit-id"
      commit_id = readFile('.git/commit-id').trim()
    }
-    stage(“Compile & Build Binary”) {
+    stage("Compile & Build Binary") {
         parallel {
             stage('dockerbuild') {
                 echo "Docker build"
